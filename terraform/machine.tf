@@ -55,7 +55,7 @@ EOF
       "git clone https://github.com/mc-arenas/random-app.git",
       "cd random-app",
       "docker build -t mcarenas/random-app .",
-      "docker run -p 80:80 mcarenas/random-app",
+      "docker run -d -p 80:5000 mcarenas/random-app",
       "portainer_passw=$(docker run --rm httpd:2.4-alpine htpasswd -nbB admin ${var.portainer_passw} | cut -d ':' -f 2)",
       "docker run -d --name portainer -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer --admin-password $portainer_passw",
     ]
